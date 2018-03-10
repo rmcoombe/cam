@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>getUserMedia</title>
+		<style>
+			body{background: #444444; color: #ffffff;}
+			button{background: #f8f8f8; -webkit-appearance: none; border: 0; padding:8px;}
+			img{
+				width: 400px;
+				height: 300px;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<button id="capture">Click to capture image</button>
+		<button id="stop">Stop Stream</button>
+		<h2>Video</h2>
+		<video width="400" height="300" id="video" autoplay></video>
+		<canvas></canvas>
+		<canvas width="400" height="300" id="canvas"></canvas>
+		<h2>Images</h2>	
+		<div id="images"></div>
+
+		<script src="js/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia;
+				var video =  document.getElementById("video");
+				var context = document.getElementById("canvas").getContext("2d");
+				var videoStream = null;
+
+				navigator.camera.getPicture(
+
+					{video: true},
+
+					function (stream){
+						videoStream =stream;
+						var url = window.URL.createObjectURL(stream);
+						video.src = url;
+					},
+
+					function(err){
+						console.log(err.name)
+					}
+					
+					);
+
+				$("#capture").on('click', function(){
+
+					context.drawImage(video, 0, 0, video.width, video.height);
+					var base64 = canvas.toDataURL("image/png");
+
+					$("#images").append(
+						"<a href='" + base64 + "' download='image (" + new Date($.now()) + ")'><img src='" + base64 + "'></a>" 
+						).show();
+				});
+
+				$("stop").on('click', function(){
+					video.pause();
+					video.src = "";
+					videoStream.stop();
+					$("#canvas").hide();
+
+				});
+			});
+		</script>
+
+
+	</body>
+</html>
+
