@@ -54,7 +54,7 @@ $(document).ready(function(){
 
 		if($("#camera").is(":hidden")){
 
-			navigator.getUserMedia(
+			navigator.mediaDevices.getUserMedia(
 
 				{video: true},
 
