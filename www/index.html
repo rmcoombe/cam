@@ -2,72 +2,38 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>getUserMedia</title>
-		<style>
-			body{background: #444444; color: #ffffff;}
-			button{background: #f8f8f8; -webkit-appearance: none; border: 0; padding:8px;}
-			img{
-				width: 400px;
-				height: 300px;
-			}
-		</style>
+		<title>HTML5 Mobile App Project</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/topcoat-mobile-dark.min.css">
+		<link rel="stylesheet" href="css/app.css">
 	</head>
-	
 	<body>
-		<button id="capture">Click to capture image</button>
-		<button id="stop">Stop Stream</button>
-		<h2>Video</h2>
-		<video width="400" height="300" id="video" autoplay></video>
-		<canvas></canvas>
-		<canvas width="400" height="300" id="canvas"></canvas>
-		<h2>Images</h2>	
-		<div id="images"></div>
+		<main id="wrapper">
+			
+			<button id="contacts-button" class="topcoat-button--large">View Contacts</button>
+			<section class="topcoat-list__container" id="contacts"><ul class="topcoat-list"></ul></section>
+
+
+			<button id="camera-button" class="topcoat-button--large">Access Camera</button>
+			<section id="camera">
+				<video id="video" width="400" height="300" autoplay></video>
+				<div id="canvas-box"><canvas id="canvas" width="400" height="300"></canvas></div>
+				<button class="topcoat-button--large" id="snap">Take Photo</button>
+			</section>
+
+			<button id="media-library-button" class="topcoat-button--large">View Media Library</button>
+			<section id="image-area"></section>
+
+		</main>
 
 		<script src="js/jquery.min.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/fastclick.js"></script>
 		<script>
-			$(document).ready(function(){
-				navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia;
-				var video =  document.getElementById("video");
-				var context = document.getElementById("canvas").getContext("2d");
-				var videoStream = null;
-
-				navigator.camera.getPicture(
-
-					{video: true},
-
-					function (stream){
-						videoStream =stream;
-						var url = window.URL.createObjectURL(stream);
-						video.src = url;
-					},
-
-					function(err){
-						console.log(err.name)
-					}
-					
-					);
-
-				$("#capture").on('click', function(){
-
-					context.drawImage(video, 0, 0, video.width, video.height);
-					var base64 = canvas.toDataURL("image/png");
-
-					$("#images").append(
-						"<a href='" + base64 + "' download='image (" + new Date($.now()) + ")'><img src='" + base64 + "'></a>" 
-						).show();
-				});
-
-				$("stop").on('click', function(){
-					video.pause();
-					video.src = "";
-					videoStream.stop();
-					$("#canvas").hide();
-
-				});
+			$(function() {
+			    FastClick.attach(document.body);
 			});
 		</script>
-
-
 	</body>
 </html>
-
