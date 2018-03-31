@@ -56,7 +56,7 @@ $(document).ready(function(){
 
 			navigator.getUserMedia(
 
-				{video: truefacingMode: {
+				{video: true, facingMode: {
 				exact: 'environment'
 				}},
 
