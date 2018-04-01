@@ -23,10 +23,32 @@
 			</section>
 
 			<button id="media-library-button" class="topcoat-button--large">View Media Library</button>
-			<section id="image-area"></section>
+			<section id="image-area">
+				<div data-role="content">	
+		
+				<h3>Journal Entry</h3>
+				<textarea id="entry" rows="4" cols="50"></textarea>
+		
+		
+				<div data-role="fieldcontain">
+		
+				<button id="createGeoPoint" class="topcoat-button--large" >Create Geopoint</button>
+				<button id="moveFile" class="topcoat-button--large">Move File</button>
+      	
+					<!--<Fields for testing location services
+					<label for="longtext">Longitude:</label>
+					<input type="text" name="longtext" id="longtext" value=""  />
+					<label for="lattext">Latitude:</label>
+					<input type="text" name="lattext" id="lattext" value=""  />
+					<label for="time">Time:</label>
+					<input type="text" name="time" id="time" value=""  />-->
+				</div>
+		</div>
+	</section>
 
 		</main>
 		<script src="cordova.js"></script>
+		<script src="backendless.js"></script>
 		<script src="js/jquery.min.js"></script>
 		<script src="js/app.js"></script>
 		<script src="js/fastclick.js"></script>
