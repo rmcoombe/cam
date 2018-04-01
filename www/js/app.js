@@ -54,29 +54,11 @@ $(document).ready(function(){
 
 		if($("#camera").is(":hidden")){
 
-			 navigator.mediaDevices.enumerateDevices()
-				.then(devices => {
-				var videoDevices = [0,0];
-				var videoDeviceIndex = 0;
-				devices.forEach(function(device) {
-				console.log(device.kind + ": " + device.label + " id = " + device.deviceId);
-				if (device.kind == "videoinput") {  
-				videoDevices[videoDeviceIndex++] =  device.deviceId;    
-				}
-			});
-			
-			var constraints =  {
-			deviceId: { exact: videoDevices[0]  } 
-			};
-			return navigator.mediaDevices.getUserMedia({ video: constraints });
-			
-			
-			
-			navigator.getUserMedia(
+		
 
-				{video: true, facingMode: {
-				exact: 'environment'
-				}},
+				navigator.getUserMedia(
+				
+								{video: { facingMode: { exact: "environment" } } },
 
 				function(stream){
 
@@ -148,7 +130,6 @@ $(document).ready(function(){
 
 			$(this).text("Hide Camera");
 
-				})	
 		}else{
 
 			$("#camera").slideUp(function(){
