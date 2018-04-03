@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.phonegap.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>New</name>
+    <name>My Travel Journal</name>
     <description>
         Hello World sample application that responds to the deviceready event.
     </description>
@@ -32,7 +32,12 @@
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
 	<plugin name="phonegap-plugin-media-stream" source="npm"/>
 	
-    <platform name="android">
+    <platform name="android"><icon src="ldpi.png" platform="android" qualifier="ldpi" />
+		<icon src="icons/mdpi.png" platform="android" qualifier="mdpi" />
+		<icon src="icons/hdpi.png" platform="android" qualifier="hdpi" />
+		<icon src="icons/xhdpi.png" platform="android" qualifier="xhdpi" />
+		<icon src="icons/xxhdpi.png" platform="android" qualifier="xxhdpi" />
+		<icon src="icons/xxxhdpi.png" platform="android" qualifier="xxxhdpi" />
         <splash density="land-ldpi" src="www/res/screen/android/drawable-land-ldpi-screen.png" />
         <splash density="land-mdpi" src="www/res/screen/android/drawable-land-mdpi-screen.png" />
         <splash density="land-hdpi" src="www/res/screen/android/drawable-land-hdpi-screen.png" />
