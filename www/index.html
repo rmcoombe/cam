@@ -1,61 +1,21 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>HTML5 Mobile App Project</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-		<link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="css/topcoat-mobile-dark.min.css">
-		<link rel="stylesheet" href="css/app.css">
-	</head>
-	<body>
-		<main id="wrapper">
-			
-			<button id="contacts-button" class="topcoat-button--large">View Contacts</button>
-			<section class="topcoat-list__container" id="contacts"><ul class="topcoat-list"></ul></section>
+<head>
+<meta charset="UTF-8">
+<title>jQuery Mobile Web App</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="homeindex.js" type="text/javascript"></script>
 
 
-			<button id="camera-button" class="topcoat-button--large">Access Camera</button>
-			<section id="camera">
-				<video id="video" width="400" height="300" autoplay></video>
-				<div id="canvas-box"><canvas id="canvas" width="400" height="300"></canvas></div>
-				<button class="topcoat-button--large" id="snap">Take Photo</button>
-			</section>
+</head> 
 
-			<button id="media-library-button" class="topcoat-button--large">View Media Library</button>
-			<section id="image-area">
-				<div data-role="content">	
-		
-				<h3>Journal Entry</h3>
-				<textarea id="entry" rows="4" cols="50"></textarea>
-		
-		
-				<div data-role="fieldcontain">
-		
-				<button id="createGeoPoint" class="topcoat-button--large" >Create Geopoint</button>
-				<button id="moveFile" class="topcoat-button--large">Move File</button>
-      	
-					<!--<Fields for testing location services
-					<label for="longtext">Longitude:</label>
-					<input type="text" name="longtext" id="longtext" value=""  />
-					<label for="lattext">Latitude:</label>
-					<input type="text" name="lattext" id="lattext" value=""  />
-					<label for="time">Time:</label>
-					<input type="text" name="time" id="time" value=""  />-->
-				</div>
-		</div>
-	</section>
+<body>
+	<div class="bg">
+		<button id="newEntry" onclick="window.location.href='newEntry.html'" class="button button2">New Entry</button>
+		<button id="previousEntry" onclick="window.location.href='previousEntry.html'"class="button button3">Previous Entries</button>
+   </div>
 
-		</main>
-		<script src="cordova.js"></script>
-		<script src="backendless.js"></script>
-		<script src="js/jquery.min.js"></script>
-		<script src="js/app.js"></script>
-		<script src="js/fastclick.js"></script>
-		<script>
-			$(function() {
-			    FastClick.attach(document.body);
-			});
-		</script>
-	</body>
+</body>
 </html>
