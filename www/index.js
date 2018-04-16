@@ -75,14 +75,14 @@ function successPosition(position) {
 	
 	//OK. Now we want to update the display with the correct values
 	
-	$('#date').val(properDate);
-	$('#lattext').val(latitude);
-	$('#longtext').val(longitude);
+	//$('#date').val(properDate);
+	//$('#lattext').val(latitude);
+	//$('#longtext').val(longitude);
 	
 	localStorage.setItem("lattext", latitude);
 	localStorage.setItem("longtext", longitude);
 	localStorage.setItem("date", properDate);
-	
+	console.log(localStorage.lattext);
 	
 	
 	
@@ -113,7 +113,7 @@ function onPhotoDataSuccess(imageURI) {
 	image.style.display = 'block';
 	image.src = imageURI;
 	localStorage.setItem("imageURI", imageURI);
-	alert(localStorage.lattext)
+	//alert(localStorage.lattext)
 }
 
 function onFail(message) {
