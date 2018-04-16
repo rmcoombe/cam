@@ -13,13 +13,10 @@ var locationOptions = {
 $(document).on('pageinit', function() {
 	
 	//set up listener for button clicks
-	$('#camera-button').on('click', updatePosition);
+	//$('#camera-button').on('click', uploadInfo2);
 	$('#uploadInfo').on('click', uploadInfo);
 	
-	//change time box to show message
-	$('#time').val("Press the button to get location data");
 	
-	$("#entries").empty();
 	
 });
 
@@ -82,8 +79,6 @@ function successPosition(position) {
 	localStorage.setItem("lattext", latitude);
 	localStorage.setItem("longtext", longitude);
 	localStorage.setItem("date", properDate);
-	console.log(localStorage.lattext);
-	
 	
 	
 }
@@ -104,6 +99,7 @@ function onDeviceReady() {
 }
 
 function capturePhoto() {
+	updatePosition()
 	navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
 	destinationType: destinationType.FILE_URI });
 }
@@ -113,13 +109,14 @@ function onPhotoDataSuccess(imageURI) {
 	image.style.display = 'block';
 	image.src = imageURI;
 	localStorage.setItem("imageURI", imageURI);
-	//alert(localStorage.lattext)
 }
 
 function onFail(message) {
       alert('Failed because: ' + message);
 }
 
+function uploadInfo2 (){ alert("working")
+}
 
 function uploadInfo (){
 	//alert(localStorage.lattext)
