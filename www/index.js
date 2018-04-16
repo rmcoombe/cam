@@ -82,7 +82,8 @@ function successPosition(position) {
 	localStorage.setItem("lattext", latitude);
 	localStorage.setItem("longtext", longitude);
 	localStorage.setItem("date", properDate);
-	console.log (localStorage.lattext);
+	
+	
 	
 	
 }
@@ -112,6 +113,7 @@ function onPhotoDataSuccess(imageURI) {
 	image.style.display = 'block';
 	image.src = imageURI;
 	localStorage.setItem("imageURI", imageURI);
+	updatePosition();
 }
 
 function onFail(message) {
