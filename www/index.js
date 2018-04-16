@@ -113,7 +113,7 @@ function onPhotoDataSuccess(imageURI) {
 	image.style.display = 'block';
 	image.src = imageURI;
 	localStorage.setItem("imageURI", imageURI);
-	updatePosition();
+	alert(localStorage.lattext)
 }
 
 function onFail(message) {
