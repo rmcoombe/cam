@@ -112,7 +112,7 @@ function onPhotoDataSuccess(imageURI) {
 }
 
 function onFail(message) {
-      alert('Failed because: ' + message);
+      swal("Uh Oh", "Failed because: " + message, "error");
 }
 
 function uploadInfo2 (){ alert("working")
@@ -149,7 +149,7 @@ function uploadInfo (){
 	}
 	
 function error(err) {
-    alert(err);
+    swal("Uh Oh", "Failed because: " + err, "error");
 }	
 	
 }
@@ -174,5 +174,5 @@ function  processResults(entries) {
 
 }
 function error(error) {
-    alert(err);
+    swal("Uh Oh", "Failed because: " + err, "error");
 }

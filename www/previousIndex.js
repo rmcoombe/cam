@@ -25,7 +25,7 @@ function  processResults(entries) {
 
 }
 function error(error) {
-    alert(error);
+    swal("Uh Oh", "Failed because: " + error, "error");
 }
 
 function test(){
