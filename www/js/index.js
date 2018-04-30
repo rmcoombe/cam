@@ -17,10 +17,11 @@ $(document).on('pageinit', function() {
     //set up listener for button clicks
     $('#uploadInfo').on('click', uploadInfo);
 
-
-
 });
 
+
+//Original code adapted from in class slides. Session 8 Location and Maps. Available 
+//at https://worcesterbb.blackboard.com/webapps/blackboard/content/listContent.jsp?course_id=_28334_1&content_id=_847621_1
 
 
 //Call this function when you want to watch for chnages in position
@@ -58,9 +59,14 @@ function failPosition(error) {
 
 }
 
+
+
 var destinationType; //used sets what should be returned (image date OR file path to image for example)
 
 document.addEventListener("deviceready", onDeviceReady, false);
+
+//Original code adapted from in class slides. Session 11. Available 
+//at https://worcesterbb.blackboard.com/webapps/blackboard/content/listContent.jsp?course_id=_28334_1&content_id=_847626_1
 
 function onDeviceReady() {
     destinationType = navigator.camera.DestinationType;
@@ -85,9 +91,9 @@ function onFail(message) {
     swal("Uh Oh", "Failed because: " + message, "error");
 }
 
-function uploadInfo2() {
-    alert("working")
-}
+
+//Original code adapted from in class slides. Session 14 Social Media & MBaaS. Available 
+//at https://worcesterbb.blackboard.com/webapps/blackboard/execute/content/file?cmd=view&content_id=_847653_1&course_id=_28334_1
 
 function uploadInfo() {
     //alert(localStorage.lattext)
