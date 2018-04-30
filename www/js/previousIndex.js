@@ -16,13 +16,16 @@ function getEntries() {
 //Original code adapted from in class slides. Session 14 Social Media & MBaaS. Available 
 //at https://worcesterbb.blackboard.com/webapps/blackboard/execute/content/file?cmd=view&content_id=_847653_1&course_id=_28334_1
 
+//Lightbox library used available at http://lokeshdhakar.com/projects/lightbox2/
+
 //Function to create each additional image link and set up the caption
 function processResults(entries) {
     
     for (var i = 0; i < entries.length; i++) {
         var caption = entries[i].entry;
 
-        $("#entries").append("<a href=" + entries[i].fileloc + " data-lightbox=" + entries[i].fileloc + " data-title=" + caption + "><img src=" + entries[i].fileloc + " data-title=" + caption + "/></a>");
+        $("#entries").append("<a href=" + entries[i].fileloc + " data-lightbox=" + entries[i].fileloc + 
+" data-title=" + caption + "><img src=" + entries[i].fileloc + " data-title=" + caption + "/></a>");
 
     }
 }
