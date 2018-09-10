@@ -3,41 +3,12 @@ body, html {
     margin: 0;
 }
 
-.bg {
-    /* The image used */
-    background-image: url("homeScreen.png");
+img { float: left
+	}
 
-    /* Full height */
-    height: 100%; 
+.button {width: 50%; 
+		height: 25%
+	}
 
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.button {
-    background-color: #3F51B5; /* Green */
-    border: none;
-	border-radius: 12px;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 18px;
-    margin: 0px 0px;
-    cursor: pointer;
-}
-
-.button2 {width: 100%;
-		  position: absolute;
-          bottom: 80px;
-}
-
-
-.button3 {width: 100%;
-		  position: absolute;
-          bottom: 20px;
-}
-
+.button7 {width: 100%
+	}
