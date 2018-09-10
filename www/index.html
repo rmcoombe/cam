@@ -11,20 +11,26 @@
 </head>
 
 <body>
-        <a href="http://cp-aims.cp.cruises.princess.com/iInspector/">
+        <a href="http://cp-aims.cp.cruises.princess.com/iInspector/" id="FSbutton">
 			<img border="0"  alt="iInspectorButton" src="assets\iInspector.png" class = "button button 1" >
-		<a href="http://cp-aims/aimsweb/#/list">
+		<a href="http://cp-aims/aimsweb/#/list" id="FSbutton">
 			<img border="0"  alt="AIMSButton" src="assets\AIMS.png" class = "button button 2" >
-		<a href="https://lxcpetrak/etrak/admin/LoginForm.action">
+		<a href="https://lxcpetrak/etrak/admin/LoginForm.action" id="FSbutton">
 			<img border="0"  alt="eTRAKButton" src="assets\etrak.png" class = "button button 3" >
-		<a href="http://cp-aims/MSPMWEB/#/">
+		<a href="http://cp-aims/MSPMWEB/#/" id="FSbutton">
 			<img border="0"  alt="MSPMButton" src="assets\mspm.png" class = "button button 4" >
-			<a href="http://cp-aims.cp.cruises.princess.com/iInspector/">
+			<a href="http://cp-aims.cp.cruises.princess.com/iInspector/"id="FSbutton" >
 			<img border="0"  alt="YUMSButton" src="assets\yums.png" class = "button button 5" >
-		<a href="http://cp-aims.cp.cruises.princess.com/iInspector/">
+		<a href="http://cp-aims.cp.cruises.princess.com/iInspector/" id="FSbutton">
 			<img border="0"  alt="SharePointButton" src="assets\SharePoint.png" class = "button button 6" >
-		<a href="http://cp-aims.cp.cruises.princess.com/iInspector/">
+		<a href="http://cp-aims.cp.cruises.princess.com/iInspector/"id="FSbutton">
 			<img border="0"  alt="CrunchtimeButton" src="assets\CrunchTimeWide.png" class = "button button7">
 </body>
+<script>
+  var goFS = document.getElementById("FSbutton");
+  goFS.addEventListener("click", function() {
+      document.body.requestFullscreen();
+  }, false);
+</script>
 
 </html>
