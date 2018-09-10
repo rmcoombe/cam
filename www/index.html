@@ -6,6 +6,12 @@
     <title>jQuery Mobile Web App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
+	<script>
+		var goFS = document.getElementById("FSbutton");
+		goFS.addEventListener("click", function() {
+		document.body.requestFullscreen();
+		}, false);
+	</script>
 
 
 </head>
@@ -26,11 +32,5 @@
 		<a href="http://cp-aims.cp.cruises.princess.com/iInspector/"id="FSbutton">
 			<img border="0"  alt="CrunchtimeButton" src="assets\CrunchTimeWide.png" class = "button button7">
 </body>
-<script>
-  var goFS = document.getElementById("FSbutton");
-  goFS.addEventListener("click", function() {
-      document.body.requestFullscreen();
-  }, false);
-</script>
 
 </html>
