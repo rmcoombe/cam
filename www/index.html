@@ -7,10 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
 	<script>
-		var goFS = document.getElementById("FSbutton");
-		goFS.addEventListener("click", function() {
-		document.body.requestFullscreen();
-		}, false);
+		document.addEventListener("deviceready", onDeviceReady, false);
+
+			function onDeviceReady() {
+			window.open = cordova.InAppBrowser.open;
+			
+		}
+	
 	</script>
 
 
